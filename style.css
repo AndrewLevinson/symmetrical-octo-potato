@@ -138,11 +138,12 @@ ul {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .flex li {
   margin: 0 20px 0 0;
-  padding: 0 3rem 3rem 0;
+  padding-right: 3rem;
   transition: all 0.3s ease-in-out;
 }
 
