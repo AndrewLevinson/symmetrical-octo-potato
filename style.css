@@ -53,7 +53,7 @@ h6 {
 
 h1 {
   font-size: 4rem;
-  line-height: 1.2;
+  line-height: 1;
   letter-spacing: -0.05rem;
 }
 
@@ -117,6 +117,11 @@ a[href$='disabled'] {
 header,
 section {
   margin-bottom: 5rem;
+}
+
+.super {
+  color: teal;
+  margin-bottom: 0;
 }
 
 .section-break {
