@@ -94,10 +94,30 @@ a {
   color: hsl(35, 100%, 35%);
   font-weight: 400;
 }
+a::after {
+  content: ' →';
+  transform: translateX(-100%);
+  position: absolute;
+  margin-top: -0.075em;
+  margin-left: 3px;
+  font-size: 125%;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
+}
+
+.flex a::after {
+  content: none;
+}
 
 a:hover {
   color: hsl(35, 100%, 50%);
   animation: flash 0.15s ease-in-out 3;
+}
+
+a:hover::after {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all 0.45s ease-in-out;
 }
 
 a[href$='disabled'] {
