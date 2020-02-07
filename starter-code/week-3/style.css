@@ -1,0 +1,15 @@
+/* Set box-sizing to border-box for all elements */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* write your css here! */
+
+/* Fonts: I use 'Lato' for body copy and 'Bebas Neue' for headers. 
+These fonts are already loaded for you in the HTML. */
