@@ -14,4 +14,8 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 - [CSS animation with @keyframes](https://codepen.io/andrew_levinson/pen/mdJrNXz)
 - [CSS colors with calc() and var()](https://codepen.io/andrew_levinson/pen/PowXebj)
 
+### JavaScript In-class
+
+- [2/28/2020](lab/week-6/in-class/index.html)
+
 ---

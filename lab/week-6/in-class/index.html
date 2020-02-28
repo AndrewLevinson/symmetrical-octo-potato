@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      :root {
+        --active-color: '#333';
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 0;
+        font-family: 'Raleway';
+        margin: 20px auto;
+      }
+
+      .description {
+        font-size: 50px;
+        width: fit-content;
+        margin: 20px auto;
+        padding: 10px;
+        border: 1px solid #333;
+      }
+
+      button {
+        font-family: monospace;
+        font-size: inherit;
+        padding: 10px;
+        width: 150px;
+        margin: 10px;
+        text-align: center;
+        line-height: 1;
+        font-weight: bolder;
+        border: 1px solid #333;
+        background-color: white;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #aebfd3;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      button:focus {
+        outline: 3px solid #aebfd3;
+      }
+
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h3 {
+        border-bottom: 2px dashed teal;
+      }
+
+      p:first-of-type,
+      h4 {
+        color: var(--active-color);
+        /* max-width: 500px; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Select an Item from my Fridge</h1>
+
+    <button onclick="clicked()" value="apple">Apple</button>
+    <button onclick="clicked()" value="mango">Mango</button>
+    <button onclick="clicked()" value="cucumber">Cucumber</button>
+
+    <select name="foods" id="select" onchange="clicked()">
+      <option selected="selected" disabled>Pick your Food</option>
+      <option value="apple">Apple</option>
+      <option value="mango">Mango</option>
+      <option value="cucumber">Cucumber</option>
+    </select>
+
+    <div class="description"></div>
+    <div class="images"></div>
+    <script>
+      //   var myList = ['apple', 'banana', 'orange'];
+
+      //   myList.forEach(item => {
+      //     console.log(`I was ${item}, but now I'm ${item.toUpperCase()}`);
+      //   });
+
+      var myFridge = {
+        apple: {
+          name: 'apple',
+          emoji: '🍏\🍎',
+          description: 'a nice crunchy honeycrisp',
+          classification: 'fruit',
+          expiration: '3/3/2020',
+          color: 'red'
+        },
+        mango: {
+          name: 'mango',
+          emoji: '🥭',
+          description: 'a sweet but sometimes slimey fruit',
+          classification: 'fruit',
+          expiration: '3/10/2020',
+          color: 'orange'
+        },
+        cucumber: {
+          name: 'cucumber',
+          emoji: '🥒',
+          description: 'a crunchy green veggie',
+          classification: 'veggie',
+          expiration: '3/15/2020',
+          color: 'green'
+        }
+      };
+
+      //   myFridge.forEach(item => console.log('item', item));
+
+      //   const fridgeFoods = Object.keys(myFridge).map(item => myFridge[item]);
+      //   console.log(fridgeFoods);
+
+      function clicked() {
+        const item = event.target.value;
+        const { emoji, color, description, expiration } = myFridge[item];
+        document.documentElement.style.setProperty('--active-color', color);
+
+        const $description = document.querySelector('.description');
+
+        $description.innerHTML = `
+        <h3>${emoji + emoji + emoji}</h3>
+        <p>${description}</p>
+        <p>Carefull, it expires in ${Math.ceil(
+          (new Date(expiration).getTime() - new Date().getTime()) / (1000 * 3600 * 24)
+        )} days</p>
+        `;
+      }
+
+      const names = ['andrew', 'simone', 'roon', 'casper'];
+      const signs = ['scorpio', 'virgo', 'cancer', 'sagitarious'];
+      const people = names.map((name, i) => {
+        return {
+          firstName: name,
+          sign: signs[i]
+        };
+      });
+
+      //   for (let index = 0; index < names.length; index++) {
+      //     console.log('hi, my name is ' + names[index]);
+      //   }
+
+      //   names.forEach(name => console.log(`hi, my name is ${name}`));
+      const images = ['image-1.jpg', 'image-2.jpg', 'image-3.jpg', 'image-4.jpg'];
+      Shuffle(images);
+      //   const accessIndex = Math.round(Math.random() * (images.length - 1));
+
+      const $images = document.querySelector('.images');
+
+      images.forEach(image => {
+        $images.innerHTML += `
+          <h2>Enjoy my image</h2>
+        <img src="${image}" width="100%"/>
+        `;
+      });
+
+      //   $images.innerHTML = `
+      //   <h2>Enjoy my image</h2>
+      //     <img src="${images[accessIndex]}" width="100%"/>
+      //   `;
+
+      // code credit: https://css-tricks.com/snippets/javascript/shuffle-array/
+      function Shuffle(o) {
+        for (
+          var j, x, i = o.length;
+          i;
+          j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
+        );
+        return o;
+      }
+    </script>
+  </body>
+</html>
