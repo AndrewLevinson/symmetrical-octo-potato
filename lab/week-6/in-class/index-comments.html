@@ -15,26 +15,13 @@
         display: flex;
         flex-wrap: wrap;
       }
-      /* you can write styles for the button! */
-      button {
-        padding: 5px;
-        font-size: 16px;
-        font-family: monospace;
-        text-transform: uppercase;
-        background-color: transparent;
-      }
-      button:hover {
-        cursor: pointer;
-        background-color: #333;
-        color: #fff;
-      }
     </style>
   </head>
   <body>
     <h1>In Class Example Feb 28</h1>
     <div>
       <button onClick="myFunction()">Click me!</button>
-      <p style="display:inline; color: grey"><i>look in the console!</i></p>
+      <p style="display:inline; color: grey"><i>look in the code + the console!</i></p>
     </div>
     <div id="container">
       <div class="item"></div>
@@ -47,6 +34,8 @@
 
     <script>
       // in-class ex. feb 28!
+      // See "index-final.html" next to this file for JUST the final code and no comments or extra stuff
+
       // let's get 1 item from our HTML
       var firstItem = document.querySelector('.item');
       // this doesn't really help us since it only returns the first item. We want querySelectorAll instead

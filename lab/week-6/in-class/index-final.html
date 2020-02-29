@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feb 28 JS In-Class</title>
+    <style>
+      /* we can write style in anticipation of dynamically generated content with classes and IDs
+      Look at the JavaScript below to find where the class="image" is applied */
+      .image {
+        width: 200px;
+        margin: 10px;
+      }
+      /* style below just making it display a little better. not part of our in-class work */
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>In Class Example Feb 28</h1>
+
+    <p>Final Version (without code comments)</p>
+    <div id="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
+    <script>
+      // Final version of in-class ex. feb 28!
+      // See "index-comments.html" next to this file for descriptions of this code + all the code from our in-class live coding session
+      var items = document.querySelectorAll('.item');
+
+      items.forEach((item, i) => {
+        var randomGenerator = Math.round(Math.random() * items.length);
+        item.innerHTML = `<img src="images/image-${randomGenerator}.jpg" class="image"/>`;
+      });
+    </script>
+  </body>
+</html>
