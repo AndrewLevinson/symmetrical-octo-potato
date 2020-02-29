@@ -49,11 +49,11 @@
       var firstItem = document.querySelector('.item');
       // this doesn't really help us since it only returns the first item. We want querySelectorAll instead
 
-      //   let's grab all the items and adds them to an array like this: ['<item 1>', 'item 2', 'item 3'];
+      //  let's grab all the items and adds them to an array like this: ['item 1 div', 'item 2 div', 'item 3 div'];
       // because we get them via querySelector, they are references to the HTML elements themselves, which is why we can manipulate the content
       var items = document.querySelectorAll('.item');
 
-      // How do we use all the items from our querySelector?
+      // How do we use all the items from our querySelectorAll?
 
       // if we want to iterate over the array (collection of items) we can use a for loop OR an array method called forEach. Both examples are below:
 
@@ -93,16 +93,16 @@
       // button function for homework
       function myFunction() {
         console.log('Im clicked, but i want to do something!');
-        // what if we randomized the images on the screen every time we clicked the button? How would we have to change out code?
+        // what if we randomized the images on the screen every time we clicked the button? How would we have to change our code?
         // Try to do other things inside here too. Learn how to change colors, add different content, etc.
       }
 
       //
       // everything below here is code written in class based on questions:
-      // array example
+      // array example. Array don't have to be made up of HTML elements. They simply live in javascript and you can make them up.
       // const myArrayExample = ['string', 42, { tile: 'my ttle', description: 'a description' }];
 
-      // // example of content stored in objects within an array below. THis is more like the real world of coding, where every item in the array is actually an object with a lot of information about each item like title, year, medium, etc.
+      // example of content stored in objects within an array below. THis is more like the real world of coding, where every item in the array is actually an object with a lot of information about each item like title, year, medium, etc.
       // this is advanced! (don't worry if it doesn't make sense now)
       // const dynamicItems = [
       //   {
