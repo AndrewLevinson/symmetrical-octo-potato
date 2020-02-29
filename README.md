@@ -19,7 +19,9 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 - Week 6: Feb. 28
 
 [Full In Class Code with Comments](lab/week-6/in-class/index-comments.html)
+
 [Final version of random image generator](lab/week-6/in-class/index-final.html)
+
 [Button Starter Code](lab/week-6/in-class/button.html)
 
 ---
