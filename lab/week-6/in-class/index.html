@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Feb 28 JS In-Class</title>
     <style>
       /* we can write style in anticipation of dynamically generated content with classes and IDs
       Look at the JavaScript below to find where the class="image" is applied */
@@ -32,8 +32,10 @@
   </head>
   <body>
     <h1>In Class Example Feb 28</h1>
-    <p>Look in the console!</p>
-    <button onClick="myFunction()">Click me!</button>
+    <div>
+      <button onClick="myFunction()">Click me!</button>
+      <p style="display:inline; color: grey"><i>look in the console!</i></p>
+    </div>
     <div id="container">
       <div class="item"></div>
       <div class="item"></div>
@@ -134,6 +136,19 @@
       //     isArtistAlive: true
       //   }
       // ];
+
+      // here's how to run a function every 2 seconds
+      // function doSomething() {
+      //   // run function from inside itself with setTimeout.
+      //   // 2000 milliseconds = 2 seconds
+      //   setTimeout(doSomething, 2000);
+      //   console.log('running function'); // you'll see this every 2 seconds
+      //   // let's change the background color
+      //   var color = Math.ceil(Math.random() * 360);
+      //   document.querySelector('body').style.backgroundColor = `hsl(${color}, 30%, 70%)`;
+      // }
+      // // run function initially
+      // doSomething();
     </script>
   </body>
 </html>
