@@ -40,7 +40,7 @@
       var firstItem = document.querySelector('.item');
       // this doesn't really help us since it only returns the first item. We want querySelectorAll instead
 
-      //  let's grab all the items and adds them to an array like this: ['item 1 div', 'item 2 div', 'item 3 div'];
+      //  let's grab all the items and add them to an array like this: ['item 1 div', 'item 2 div', 'item 3 div'];
       // because we get them via querySelector, they are references to the HTML elements themselves, which is why we can manipulate the content
       var items = document.querySelectorAll('.item');
 
@@ -58,20 +58,20 @@
         item.innerHTML = `item 👻`;
       });
 
-      // what if we want to know what loop we're on in the forEach? we can add an 'i' value as a parameter. This is not necessary.
+      // what if we want to know what loop we're on in the forEach? we can add an 'i' value as an additional optional parameter.
       items.forEach((item, i) => {
         // we use `backticks` to evaluate javascript inside of a string with {}
         item.innerHTML = `item ${i + 1} 👻`;
       });
 
       // actually, let's add the images as the innerHTML with <img/> tags instead of the 👻
-      // fyi-this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example
+      // fyi-this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example on the page
       items.forEach((item, i) => {
         item.innerHTML = `<img src="images/image-${i + 1}.jpg" class="image"/>`;
       });
 
       // let's use a randomGenerator (which returns a value between 1 and 6) randomly sort our images!
-      // fyi - this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example
+      // fyi - this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example on the page
       items.forEach((item, i) => {
         // let's generate a random number between 1 and our items array length (this number of items defined in our HTML)
         var randomGenerator = Math.round(Math.random() * items.length);
@@ -90,7 +90,7 @@
 
       //
       // everything below here is code written in class based on questions:
-      // array example. Array don't have to be made up of HTML elements. They simply live in javascript and you can make them up.
+      // array example. Array's don't have to be made up of HTML elements. They simply live in javascript and you can make them up.
       // const myArrayExample = ['string', 42, { tile: 'my ttle', description: 'a description' }];
 
       // example of content stored in objects within an array below. THis is more like the real world of coding, where every item in the array is actually an object with a lot of information about each item like title, year, medium, etc.
