@@ -1,185 +1,139 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-
     <style>
-      :root {
-        --active-color: '#333';
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        padding: 0;
-        font-family: 'Raleway';
-        margin: 20px auto;
-      }
-
-      .description {
-        font-size: 50px;
-        width: fit-content;
-        margin: 20px auto;
-        padding: 10px;
-        border: 1px solid #333;
-      }
-
-      button {
-        font-family: monospace;
-        font-size: inherit;
-        padding: 10px;
-        width: 150px;
+      /* we can write style in anticipation of dynamically generated content with classes and IDs
+      Look at the JavaScript below to find where the class="image" is applied */
+      .image {
+        width: 200px;
         margin: 10px;
-        text-align: center;
-        line-height: 1;
-        font-weight: bolder;
-        border: 1px solid #333;
-        background-color: white;
       }
-
+      /* style below just making it display a little better. not part of our in-class work */
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      /* you can write styles for the button! */
+      button {
+        padding: 5px;
+        font-size: 16px;
+        font-family: monospace;
+        text-transform: uppercase;
+        background-color: transparent;
+      }
       button:hover {
         cursor: pointer;
-        background-color: #aebfd3;
-        transition: background-color 0.2s ease-in-out;
-      }
-
-      button:focus {
-        outline: 3px solid #aebfd3;
-      }
-
-      h3,
-      p {
-        margin: 0;
-      }
-
-      h3 {
-        border-bottom: 2px dashed teal;
-      }
-
-      p:first-of-type,
-      h4 {
-        color: var(--active-color);
-        /* max-width: 500px; */
+        background-color: #333;
+        color: #fff;
       }
     </style>
   </head>
-
   <body>
-    <h1>Select an Item from my Fridge</h1>
+    <h1>In Class Example Feb 28</h1>
+    <p>Look in the console!</p>
+    <button onClick="myFunction()">Click me!</button>
+    <div id="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
 
-    <button onclick="clicked()" value="apple">Apple</button>
-    <button onclick="clicked()" value="mango">Mango</button>
-    <button onclick="clicked()" value="cucumber">Cucumber</button>
-
-    <select name="foods" id="select" onchange="clicked()">
-      <option selected="selected" disabled>Pick your Food</option>
-      <option value="apple">Apple</option>
-      <option value="mango">Mango</option>
-      <option value="cucumber">Cucumber</option>
-    </select>
-
-    <div class="description"></div>
-    <div class="images"></div>
     <script>
-      //   var myList = ['apple', 'banana', 'orange'];
+      // in-class ex. feb 28!
+      // let's get 1 item from our HTML
+      var firstItem = document.querySelector('.item');
+      // this doesn't really help us since it only returns the first item. We want querySelectorAll instead
 
-      //   myList.forEach(item => {
-      //     console.log(`I was ${item}, but now I'm ${item.toUpperCase()}`);
-      //   });
+      //   let's grab all the items and adds them to an array like this: ['<item 1>', 'item 2', 'item 3'];
+      // because we get them via querySelector, they are references to the HTML elements themselves, which is why we can manipulate the content
+      var items = document.querySelectorAll('.item');
 
-      var myFridge = {
-        apple: {
-          name: 'apple',
-          emoji: '🍏\🍎',
-          description: 'a nice crunchy honeycrisp',
-          classification: 'fruit',
-          expiration: '3/3/2020',
-          color: 'red'
-        },
-        mango: {
-          name: 'mango',
-          emoji: '🥭',
-          description: 'a sweet but sometimes slimey fruit',
-          classification: 'fruit',
-          expiration: '3/10/2020',
-          color: 'orange'
-        },
-        cucumber: {
-          name: 'cucumber',
-          emoji: '🥒',
-          description: 'a crunchy green veggie',
-          classification: 'veggie',
-          expiration: '3/15/2020',
-          color: 'green'
-        }
-      };
+      // How do we use all the items from our querySelector?
 
-      //   myFridge.forEach(item => console.log('item', item));
+      // if we want to iterate over the array (collection of items) we can use a for loop OR an array method called forEach. Both examples are below:
 
-      //   const fridgeFoods = Object.keys(myFridge).map(item => myFridge[item]);
-      //   console.log(fridgeFoods);
-
-      function clicked() {
-        const item = event.target.value;
-        const { emoji, color, description, expiration } = myFridge[item];
-        document.documentElement.style.setProperty('--active-color', color);
-
-        const $description = document.querySelector('.description');
-
-        $description.innerHTML = `
-        <h3>${emoji + emoji + emoji}</h3>
-        <p>${description}</p>
-        <p>Carefull, it expires in ${Math.ceil(
-          (new Date(expiration).getTime() - new Date().getTime()) / (1000 * 3600 * 24)
-        )} days</p>
-        `;
+      // 1. a 'for loop'
+      for (let i = 0; i < items.length; i++) {
+        items[i].innerHTML = 'item 👻' + i;
       }
 
-      const names = ['andrew', 'simone', 'roon', 'casper'];
-      const signs = ['scorpio', 'virgo', 'cancer', 'sagitarious'];
-      const people = names.map((name, i) => {
-        return {
-          firstName: name,
-          sign: signs[i]
-        };
+      // or 2. forEach array method (my preferred method, because it looks nicer ✅).
+      items.forEach(item => {
+        item.innerHTML = `item 👻`;
       });
 
-      //   for (let index = 0; index < names.length; index++) {
-      //     console.log('hi, my name is ' + names[index]);
+      // what if we want to know what loop we're on in the forEach? we can add an 'i' value as a parameter. This is not necessary.
+      items.forEach((item, i) => {
+        // we use `backticks` to evaluate javascript inside of a string with {}
+        item.innerHTML = `item ${i + 1} 👻`;
+      });
+
+      // actually, let's add the images as the innerHTML with <img/> tags instead of the 👻
+      // fyi-this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example
+      items.forEach((item, i) => {
+        item.innerHTML = `<img src="images/image-${i + 1}.jpg" class="image"/>`;
+      });
+
+      // let's use a randomGenerator (which returns a value between 1 and 6) randomly sort our images!
+      // fyi - this will overwrite the content in items.forEach which ran just before this! comment the next lines out if you want to see the result of the previous example
+      items.forEach((item, i) => {
+        // let's generate a random number between 1 and our items array length (this number of items defined in our HTML)
+        var randomGenerator = Math.round(Math.random() * items.length);
+        console.log('our random number generated is:', randomGenerator); // expected value: between 1 and 6
+        // notice what's different?
+        item.innerHTML = `<img src="images/image-${randomGenerator}.jpg" class="image"/>`;
+      });
+      // there's a few problems in the code above, right? It looks like sometimes we get a randomGenerator of 0. But also it looks like we are getting duplicate images. How can we fix this? Think about it and we'll talk about it next class.
+
+      // button function for homework
+      function myFunction() {
+        console.log('Im clicked, but i want to do something!');
+        // what if we randomized the images on the screen every time we clicked the button? How would we have to change out code?
+        // Try to do other things inside here too. Learn how to change colors, add different content, etc.
+      }
+
+      //
+      // everything below here is code written in class based on questions:
+      // array example
+      // const myArrayExample = ['string', 42, { tile: 'my ttle', description: 'a description' }];
+
+      // // example of content stored in objects within an array below. THis is more like the real world of coding, where every item in the array is actually an object with a lot of information about each item like title, year, medium, etc.
+      // this is advanced! (don't worry if it doesn't make sense now)
+      // const dynamicItems = [
+      //   {
+      //     title: 'title for my first item',
+      //     imageSource: 'image-1.jpg',
+      //     year: 2002,
+      //     medium: 'digital',
+      //     isArtistAlive: true
+      //   },
+      //   {
+      //     title: 'title for my second item',
+      //     imageSource: 'image-2.gif',
+      //     year: 1984,
+      //     medium: 'mixed',
+      //     isArtistAlive: false
+      //   },
+      //   {
+      //     title: 'title for my third item',
+      //     imageSource: 'image-3.png',
+      //     year: 1812,
+      //     medium: 'painting',
+      //     isArtistAlive: false
+      //   },
+      //   {
+      //     title: 'title for my fourth item',
+      //     imageSource: 'image-4.jpg',
+      //     year: 2019,
+      //     medium: 'performance',
+      //     isArtistAlive: true
       //   }
-
-      //   names.forEach(name => console.log(`hi, my name is ${name}`));
-      const images = ['image-1.jpg', 'image-2.jpg', 'image-3.jpg', 'image-4.jpg'];
-      Shuffle(images);
-      //   const accessIndex = Math.round(Math.random() * (images.length - 1));
-
-      const $images = document.querySelector('.images');
-
-      images.forEach(image => {
-        $images.innerHTML += `
-          <h2>Enjoy my image</h2>
-        <img src="${image}" width="100%"/>
-        `;
-      });
-
-      //   $images.innerHTML = `
-      //   <h2>Enjoy my image</h2>
-      //     <img src="${images[accessIndex]}" width="100%"/>
-      //   `;
-
-      // code credit: https://css-tricks.com/snippets/javascript/shuffle-array/
-      function Shuffle(o) {
-        for (
-          var j, x, i = o.length;
-          i;
-          j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x
-        );
-        return o;
-      }
+      // ];
     </script>
   </body>
 </html>
