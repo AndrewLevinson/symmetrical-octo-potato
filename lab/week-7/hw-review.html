@@ -1,0 +1,72 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6 HW Review</title>
+    <style>
+      /* we can write style in anticipation of dynamically generated content with classes and IDs
+      Look at the JavaScript below to find where the class="image" is applied */
+      .image {
+        width: 200px;
+        margin: 10px;
+      }
+
+      /* style below just making it display a little better. not part of our in-class work */
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      /* you can write styles for the button! Try your own */
+      button {
+        padding: 5px;
+        font-size: 16px;
+        font-family: monospace;
+        text-transform: uppercase;
+        background-color: transparent;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Homework Review — Use a button</h1>
+
+    <button onclick="handleClick()">Randomly Pick Images</button>
+
+    <div id="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+
+    <script>
+      var items = document.querySelectorAll('.item');
+
+      // this function runs when button is clicked
+      function handleClick() {
+        // generate an image
+        items.forEach((item, i) => {
+          // we use Math.ceil to always round UP so that we return a number from 1 to 6 (Math.round could return a 0, which we don't want because our image names start at image-1.jpg, etc.)
+          var randomGenerator = Math.ceil(Math.random() * items.length);
+          item.innerHTML = `<img src="images/image-${randomGenerator}.jpg" class="image"/>`;
+        });
+      }
+      // the problem with the code above is that we get duplicates of images and some aren't represented. A better way is to resort the items
+      // below is a function I found on CSS tricks.
+      // If I credit the author in a code comment, I can use it in my code since it's a utility function meant to be shared
+
+      // array shuffle from CSS tricks: https://css-tricks.com/snippets/javascript/shuffle-array/
+      function randomize() {
+        items.sort(() => 0.5 - Math.random());
+      }
+      // challenge: try to incorporate the randomize() function above into your Archive project. We'll leanr about how to use this is future classes
+    </script>
+  </body>
+</html>

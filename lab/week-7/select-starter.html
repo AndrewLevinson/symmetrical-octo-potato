@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 7 HW</title>
+    <style>
+      /* standard reset */
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      /* we can style the select element, too. (not the "options" dropdown, through) */
+      select {
+        font-family: monospace;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+
+      select:hover {
+        cursor: pointer;
+        color: #fff;
+        background-color: #333;
+        transition: 0.25s all ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Week 7 Dropdown Homework (due March 13)</h1>
+
+    <select onchange="handleChange()">
+      <option disabled selected>title of your filter</option>
+      <option value="add your value">displayed value 1 [change me]</option>
+      <option value="add your value">displayed value 2 [change me]</option>
+      <option value="add your value">displayed value 3 [change me]</option>
+      <option value="add your value">displayed value 4 [change me]</option>
+      <option value="add your value">displayed value 5 [change me]</option>
+    </select>
+
+    <div id="container">
+      <!-- if you are adding content to HTML, add it here -->
+    </div>
+
+    <script>
+      // handleChange() function that runs onchange
+      function handleChange() {
+        // 2. inside your function, get the value of the selected item in the dropdown onchange
+        // remember, event.target.value
+        //
+        // 3. do SOMETHING with this value.
+        // // ideas: update the styling of an element you put on the page (color, font-size, background image).
+        // // Or try to some element to the screen based on dropdown value (image, text, audio, etc.)
+        //
+        // challenge: try to filter an array like in the in-class example!!
+
+        console.log('filter changed, now make me do something!');
+      }
+    </script>
+  </body>
+</html>
