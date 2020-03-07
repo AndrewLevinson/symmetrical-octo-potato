@@ -24,6 +24,8 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 #### Week 7: March 6
 
-- [tbd]
+- [Button Homework Review](lab/week-7/hw-review.html)
+- [In Class work with comments](lab/week-7/index-comments.html)
+- [Homework starter code](lab/week-7/select-starter.html)
 
 ---
