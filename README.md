@@ -30,6 +30,6 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 #### Week 8: March 13
 
-- [In Class code completed](lab/week-8/index.html)
+- [In Class code completed](lab/week-8/)
 
 ---
