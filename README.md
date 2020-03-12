@@ -28,4 +28,8 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 - [In Class work with comments](lab/week-7/index-comments.html)
 - [Homework starter code](lab/week-7/select-starter.html)
 
+#### Week 8: March 13
+
+- [In Class code completed](lab/week-8/index.html)
+
 ---
