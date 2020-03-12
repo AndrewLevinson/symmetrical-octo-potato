@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive Sample</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header id="title">
+        <h1 class="title">Archive Sample Project</h1>
+        <p class="sub-hed">This is a sample archive project I'm walking through in class</p>
+      </header>
+      <div class="controls">
+        <button onclick="randomize()">Randomize</button>
+        <select name="filtering" id="filter" onchange="filterContent()">
+          <option value="" disabled selected>Filter by Year</option>
+          <option value="2020">Before 2020</option>
+          <option value="2000">Before 2000</option>
+          <option value="1900">Before 1900</option>
+        </select>
+      </div>
+
+      <div class="grid">
+        <!-- dynamically add items here using javascript -->
+      </div>
+
+      <footer>
+        <p>Placeholder for footer info</p>
+      </footer>
+    </div>
+    <!-- script tags below -->
+    <script src="script.js"></script>
+  </body>
+</html>
