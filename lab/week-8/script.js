@@ -79,6 +79,7 @@ function filterContent() {
 }
 
 function randomize() {
+  // array shuffle code credit: https://css-tricks.com/snippets/javascript/shuffle-array/
   var randomItems = organizedArchiveItems.sort(() => {
     return 0.5 - Math.random();
   });
