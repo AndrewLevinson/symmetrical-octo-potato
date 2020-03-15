@@ -13,64 +13,64 @@ var oldItemsArrayExample = ['image-1.jpg', 'image-2.jpg', 'image-3.jpg', '...'];
 var organizedArchiveItems = [
   {
     title: 'Talented',
-    imageURL: 'talented.jpg',
-    description: '1 — a description',
+    imageFile: 'talented.jpg',
+    description: '1. a description of the first',
     credit: 'Photo by Jamie Street on Unsplash',
     year: 1984
   },
   {
     title: 'Brilliant',
-    imageURL: 'brilliant.jpg',
-    description: '2 — a description of the second',
+    imageFile: 'brilliant.jpg',
+    description: '2. a description of the second',
     credit: 'Photo by Anoir Chafik on Unsplash',
     year: 2003
   },
   {
     title: 'Incredible',
-    imageURL: 'incredible.jpg',
-    description: '3 — a description of the third',
+    imageFile: 'incredible.jpg',
+    description: '3. a description of the third',
     credit: 'Photo by Martin Moreno on Unsplash',
     year: 1980
   },
   {
     title: 'Amazing',
-    imageURL: 'amazing.jpg',
-    description: '4 — a description of the fourth',
+    imageFile: 'amazing.jpg',
+    description: '4. a description of the fourth',
     credit: 'Photo by Julian Schiemann on Unsplash',
     year: 1830
   },
   {
     title: 'Show-Stopping',
-    imageURL: 'show-stopping.jpg',
-    description: '5 — a description of the fifth',
+    imageFile: 'show-stopping.jpg',
+    description: '5. a description of the fifth',
     credit: 'Photo by Jamie Street on Unsplash',
     year: 2013
   },
   {
     title: 'Spectacular',
-    imageURL: 'spectacular.jpg',
-    description: '6 — a description of the sixth',
+    imageFile: 'spectacular.jpg',
+    description: '6. a description of the sixth',
     credit: 'Photo by Sneaky Elbow on Unsplash',
     year: 1999
   },
   {
     title: 'Never the Same',
-    imageURL: 'never-the-same.jpg',
-    description: '7 — a description of the seventh',
+    imageFile: 'never-the-same.jpg',
+    description: '7. a description of the seventh',
     credit: 'Photo by Sara Kurfeß on Unsplash',
     year: 2004
   },
   {
     title: 'Totally Unique',
-    imageURL: 'totally-unique.jpg',
-    description: '8 — a description of the eighth',
+    imageFile: 'totally-unique.jpg',
+    description: '8. a description of the eighth',
     credit: 'Photo by Vitor Fontes on Unsplash',
     year: 2014
   },
   {
     title: 'Completely Not Ever Been Done Before',
-    imageURL: 'completely-not-ever-been-done-before.jpg',
-    description: '9 — a description of the ninth',
+    imageFile: 'completely-not-ever-been-done-before.jpg',
+    description: '9. a description of the ninth',
     credit: 'Photo by NICOLAS TESSARI on Unsplash',
     year: 1999
   }
@@ -87,7 +87,7 @@ function generate(items) {
     grid.innerHTML += `
   <div class="item">
     <p class="year">${item.year}</p>
-    <img src="images/${item.imageURL}" class="archive-image"/>
+    <img src="images/${item.imageFile}" class="archive-image"/>
     <h5>${item.title}</h5>
     <p class="description">${item.description}</p>
     <p class="source">${item.credit}</p>
