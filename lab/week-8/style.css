@@ -7,16 +7,18 @@ body {
   margin: 0;
   font-family: 'Helvetica';
   color: #222;
+  background-color: #ebebeb;
 }
-button {
-  font-size: inherit;
-  font-family: inherit;
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
 .title {
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
-
 .sub-hed {
   margin-top: -15px;
   letter-spacing: -0.01em;
@@ -25,6 +27,13 @@ header#title {
   margin-bottom: 30px;
 }
 
+.controls {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #ebebeb;
+  position: sticky;
+  top: 0;
+  padding-top: 20px;
+}
 .controls > * {
   display: inline-block;
   margin-right: 10px;
@@ -33,25 +42,21 @@ header#title {
 button,
 select {
   background-color: transparent;
-  border: none;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 14px;
   color: hsl(5, 70%, 60%);
-  border-bottom: 1px solid hsl(5, 50%, 60%);
-  padding: 2px;
+  border: 1px solid hsl(5, 50%, 60%);
+  padding: 4px;
+  padding-left: 0;
+  border: none;
+  font-family: inherit;
 }
 
 button:hover,
 select:hover {
   cursor: pointer;
   font-style: italic;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 30px auto;
 }
 
 .grid {
@@ -61,7 +66,7 @@ select:hover {
 }
 
 .item {
-  margin: 10px 20px 20px 0;
+  margin: 10px 30px 20px 0;
 }
 
 .item h5,
@@ -82,6 +87,7 @@ p {
 
 .source {
   font-size: 80%;
+  opacity: 0.75;
 }
 
 .year {
@@ -89,15 +95,16 @@ p {
   width: fit-content;
   padding: 2px 4px 2px 4px;
   font-size: 13px;
-  border-radius: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
   color: white;
 }
 
 .archive-image {
+  width: 325px;
+  height: 216px;
+  object-fit: cover;
   border: 1px solid hsl(0, 0%, 90%);
   box-shadow: 0px 0px 10px -3px hsla(0, 0%, 30%, 0.3);
-  width: fit-content;
 }
 
 footer {
@@ -105,8 +112,6 @@ footer {
   text-transform: lowercase;
   font-size: 80%;
   border-top: 1px solid rgba(0, 0, 0, 0.3);
-  position: fixed;
-  bottom: 20px;
-  width: 90%;
+  margin-top: 50px;
   padding: 5px 0;
 }
