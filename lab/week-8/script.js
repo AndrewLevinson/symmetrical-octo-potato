@@ -110,6 +110,5 @@ function randomize() {
   // don't worry about why this works, it's complicated. We are creating a new array based on the original organizedArchiveItems
   // but the { objects } are in a different order...like shuffling a deck of cards
   var randomItems = organizedArchiveItems.sort(() => 0.5 - Math.random());
-
   generate(randomItems); // run function to generate content with new randomItems array
 }
