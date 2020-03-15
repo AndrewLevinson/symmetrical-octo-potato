@@ -8,4 +8,6 @@ This is a basic version of a content archive that:
 4. Randomizes via a `button`
 5. includes basic styling
 
-Do not just COPY this code for your project. Instead, use it as a reference for your own Archive Project #02. Try to make it more <b>interesting</b> than our in-class examples!! Think about what other filters, sorting, buttons, etc. you can use to make it more interesting. Remember, HTML supports videos and audio in addition to images.
+Do not just COPY this code for your project. Instead, use it as a reference for your own Archive Project #02. Try to make it more <b>interesting</b> than our in-class examples!!
+
+Think about what other filters, sorting, buttons, etc. you can use to make it more interesting in addition to using different content and layout. Remember, HTML supports videos and audio in addition to images.
