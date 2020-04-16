@@ -37,4 +37,16 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 - [In-class example](lab/week-11/in-class-example/)
 - [Homework starter code](lab/week-11/starter.html)
 
+#### Week 12: April 17
+
+<i>coming soon</i>
+
+#### Week 13: April 24
+
+<i>coming soon</i>
+
+#### Week 14: May 1
+
+<i>coming soon</i>
+
 ---
