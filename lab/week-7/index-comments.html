@@ -79,7 +79,7 @@
       function testFilter() {
         // first, get the value of the filter when changes
         // event is 'onchange'. The target is the <select> element. And the value is the value="year" attribute in the <select> element
-        // add a + to the variable to convert it from a number to a string
+        // add a + to the variable to convert it from a string to a number (since we are going to use the year value as a number in our filter)
         var filterValue = +event.target.value;
         console.log('test dropdown value:', filterValue);
 
