@@ -18,18 +18,23 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 #### Week 6: Feb. 28
 
-- [Full In Class Code with Comments](lab/week-6/in-class/index-comments.html)
+- [Full In-Class Code with Comments](lab/week-6/in-class/index-comments.html)
 - [Final version of random image generator](lab/week-6/in-class/index-final.html)
 - [Button Starter Code](lab/week-6/in-class/button.html)
 
 #### Week 7: March 6
 
 - [Button Homework Review](lab/week-7/hw-review.html)
-- [In Class work with comments](lab/week-7/index-comments.html)
+- [In-class work with comments](lab/week-7/index-comments.html)
 - [Homework starter code](lab/week-7/select-starter.html)
 
 #### Week 8: March 13
 
-- [In Class code completed](lab/week-8/)
+- [In-class code completed](lab/week-8/)
+
+#### Week 11: March 13
+
+- [In-class example](lab/week-11/in-class-example/)
+- [Homework starter code](lab/week-11/starter.html)
 
 ---
