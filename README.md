@@ -32,7 +32,7 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 - [In-class code completed](lab/week-8/)
 
-#### Week 11: March 13
+#### Week 11: April 10
 
 - [In-class example](lab/week-11/in-class-example/)
 - [Homework starter code](lab/week-11/starter.html)
