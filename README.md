@@ -39,7 +39,7 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 #### Week 12: April 17
 
-<i>coming soon</i>
+- [In-class example](lab/week-12/in-class-example/)
 
 #### Week 13: April 24
 

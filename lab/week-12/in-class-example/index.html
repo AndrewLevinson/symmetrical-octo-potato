@@ -1,0 +1,104 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In-Class Lab April 17th 2020</title>
+
+    <!-- basic doc setup unrelated to lesson specifics -->
+    <link rel="stylesheet" href="setup.css" />
+
+    <!-- lesson specific css linked below -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="explainer">
+        <h1>In-Class Content: 4/17/2020</h1>
+        <p>Hi class, this is my in-class exercise from our 4/17/2020 lecture which I covered the use of touch-based media queries and better ways to work with images—especially useful for responsive design.</p>
+        <a href="https://newschool.zoom.us/rec/play/65B7drurpjw3T4XE5QSDVv9wW43vf6qs1HJL-vNfmEvnVnlXZwKjZLJHa-sEwiip9pspCi2rEmY_f-hN?startTime=1587153598000">Recorded lesson on Zoom</a>
+        <p>Please <b>inspect</b> this page and <a href="https://github.com/AndrewLevinson/symmetrical-octo-potato/tree/master/lab/week-12/in-class-example">look at the code</a> to understand what's goin on here</p>
+      </section>
+
+      <section class="section-object-fit">
+        <h3>Resize and Crop Images using only CSS</h3>
+        <p><span>object-fit</span> in CSS allows us to resize, crop, and position an image.</p>
+        <div class="flex">
+          <div>
+            <h4>❌without object-fit property</h4>
+            <img class="destroyed" src="assets/object-fit-dog.jpg" alt="smol dog" />
+            <p>Just setting width and height destroys aspect ratio</p>
+          </div>
+          <div>
+            <h4>✅ with object-fit property 👍</h4>
+            <img class="fitted" src="assets/object-fit-dog.jpg" alt="smol dog" />
+            <p>Using the <span>object-fit: cover</span> property to crop and <span>object-position: 0 40%</span> to adjust cropping</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-picture-tag">
+        <h3>Picture tag</h3>
+        <p>
+          In responsive design, we like the <span>picture</span> tag in order to load different images based on screen-size. This is important because we want to load different crops on different devices and also load
+          smaller images when we can, to improve speed of our website. For example, there's no reason to load a giant 2MB 6000px wide image on a tiny 400px wide iPhone screen.
+        </p>
+
+        Using the picture tag:
+        <ul>
+          <li>Small image loads (640px  ×  960px, 64KB) when screen is less than 551px wide: assets/dog-small.jpg</li>
+          <li>Large image loads (3303px  ×  4954px, 1MB / 1,000KB) when screen is above 550px wide: assets/dog-large.jpg</li>
+        </ul>
+        <p>The image below is cropped using <span>object-fit: cover</span> and <span>object-position: 0 65%</span> when the screen is > 550px to make a portrait image look better in landscape.</p>
+        <i>shrink your browser size below 550px to see the image below snap to its original vertical crop and sub in the smaller image file size</i>
+        <div class="pic-container">
+          <picture>
+            <source media="(max-width: 550px)" srcset="assets/dog-small.jpg" />
+            <img class="dog-local" src="assets/dog-large.jpg" alt="smol dog" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="section-cdn">
+        <h3>Using a CDN to crop, size, and host our images for us</h3>
+        <p>
+          It can be a bit tedious to use a design tool like Photoshop to crop, size, and export different variations of every image we want on our site + custom object-position on every unique image. We can speed that up
+          by using an image optimization tool. We're using <a href="https://cloudinary.com/">Cloudinary.com</a> for this. I explain how to generate our image URLs in our
+          <a href="https://newschool.zoom.us/rec/play/65B7drurpjw3T4XE5QSDVv9wW43vf6qs1HJL-vNfmEvnVnlXZwKjZLJHa-sEwiip9pspCi2rEmY_f-hN?startTime=1587153598000">recorded zoom lesson</a> from April 17. Jump to about 1 hour
+          and 7 minutes in.
+        </p>
+        Using the picture tag:
+        <ul>
+          <li>Small image loads when screen is less than 551px wide: https://res.cloudinary.com/alevinson/image/upload/c_scale,w_800/v1587147567/dog-large_hnpsax.jpg</li>
+          <li>Large image loads when screen is above 550px wide: https://res.cloudinary.com/alevinson/image/upload/c_fill,g_face,h_600,w_1100,y_0,z_1/v1587147567/dog-large_hnpsax.jpg</li>
+        </ul>
+
+        <picture>
+          <source media="(max-width: 550px)" srcset="https://res.cloudinary.com/alevinson/image/upload/c_scale,w_800/v1587147567/dog-large_hnpsax.jpg" />
+          <img class="dog-cdn" src="https://res.cloudinary.com/alevinson/image/upload/c_fill,g_face,h_700,w_1280,y_0,z_1/v1587147567/dog-large_hnpsax.jpg" alt="smol dog" />
+        </picture>
+      </section>
+
+      <section class="section-final">
+        <h3>Incorporate a @media query to detect touch devices when hovering</h3>
+        <p>
+          Using @media (pointer: coarse) and @media (pointer: fine) we can style only when a device is touch vs. non-touch, respectively, without worrying about screen size
+        </p>
+        <i>Hover on the image below with a mouse to reveal content on top. On a touch device, you are not able to but we display content above image.</i>
+        <div class="content">
+          <div class="words">
+            <h2>Title</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore deserunt quod expedita nobis ipsam inventore animi nemo distinctio dignissimos dicta, velit, dolores explicabo. Eligendi, incidunt nemo optio
+              omnis porro architecto cupiditate ut vel, amet laborum excepturi enim laudantium aut? Iusto voluptas ipsum dolore eveniet. Voluptas facilis autem adipisci maxime eligendi eos natus eaque, non, dolor
+              aspernatur saepe quam cumque deleniti facere et laborum. Nulla ratione sapiente natus vel, iste, eveniet aperiam, aliquam tempore.
+            </p>
+          </div>
+          <picture>
+            <source media="(max-width: 550px)" srcset="https://res.cloudinary.com/alevinson/image/upload/c_scale,w_800/v1587147567/dog-large_hnpsax.jpg" />
+            <img class="dog-cdn" src="https://res.cloudinary.com/alevinson/image/upload/c_fill,g_face,h_700,w_1280,y_0,z_1/v1587147567/dog-large_hnpsax.jpg" alt="smol dog" />
+          </picture>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
