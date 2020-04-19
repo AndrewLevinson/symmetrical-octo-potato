@@ -65,14 +65,13 @@ Just make sure image is set to width: 100% */
   .words {
     opacity: 1;
     position: static;
-  }
-  .words p {
-    display: none;
-  }
-  .words {
     height: auto;
     background-color: transparent;
     padding: 0.5rem;
     padding-left: 0;
+    color: initial;
+  }
+  .words p {
+    display: none;
   }
 }
