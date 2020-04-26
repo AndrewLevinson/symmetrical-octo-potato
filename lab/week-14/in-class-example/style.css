@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  /* background-color: hsl(336, 15%, 65%); */
+  background-color: #141414;
+  color: white;
+  font-family: 'Avenir';
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 2.5%;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  background-color: #111;
+}
+
+.links {
+  display: flex;
+}
+.links a {
+  padding-left: 1rem;
+  color: white;
+  text-decoration: none;
+  opacity: 0.75;
+}
+h1 {
+  font-weight: 300;
+  /* text-align: center; */
+}
+
+.container {
+  width: 95%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  list-style: none;
+  grid-gap: 0.5rem;
+  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 150px;
+}
+
+.card {
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 0px 10px -5px #000;
+  transition: 0.3s all cubic-bezier(0.66, 0, 0.21, 1.14);
+}
+
+.card:hover {
+  transform: scale(1.15);
+  box-shadow: 0px 0px 15px -2px #000;
+  z-index: 997;
+}
+
+img.movie {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  border: 1px solid #292929;
+  border-radius: 2px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 0.5em;
+  opacity: 0.75;
+  font-size: 26px;
+}
+.pin {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-size: 18px;
+  width: calc(100% - 20px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+p {
+  margin: 0;
+}
+
+.details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 999;
+}
+
+#detail-content {
+  padding: 5rem;
+  border-radius: 2px;
+  width: 90%;
+  max-height: 90%;
+  max-width: 850px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* background-color: hsl(22, 12%, 82%); */
+  background-color: black;
+  transform: translate(-50%, -50%);
+  /* color: #3d3d3d; */
+  color: #fff;
+  border: 1px solid hsla(336, 15%, 65%, 0.5);
+  position: relative;
+  overflow-y: scroll;
+  box-shadow: 0px 0px 10px -5px #000;
+}
+
+.icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  width: 30px;
+  fill: transparent;
+  z-index: 3;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke: #fff;
+  opacity: 0.75;
+  animation: dash 1s cubic-bezier(0.66, 0, 0.21, 1.14) forwards 0.5s;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon line {
+  stroke-opacity: 0;
+  transform: rotate(0);
+  animation: showIcon 1s ease-in-out forwards 0.5s;
+}
+
+.icon:hover {
+  cursor: pointer;
+  stroke: hsl(336, 15%, 65%);
+  transition: all 0.3s ease-in-out;
+}
+
+.tag {
+  display: inline-block;
+  border: 2px solid hsl(336, 15%, 65%);
+  margin: 0 5px 10px 0;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.bkg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0 0;
+  /* opacity: 0.25; */
+  pointer-events: none;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes showIcon {
+  to {
+    stroke-opacity: 1;
+  }
+}
