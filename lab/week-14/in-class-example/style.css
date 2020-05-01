@@ -35,6 +35,20 @@ nav {
   text-decoration: none;
   opacity: 0.75;
 }
+
+.trailer {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid hsl(336, 15%, 65%);
+  width: fit-content;
+  margin: 1.5rem;
+  margin-left: 0;
+  display: block;
+}
+.trailer:hover {
+  font-weight: bolder;
+}
+
 h1 {
   font-weight: 300;
   /* text-align: center; */
@@ -138,7 +152,6 @@ p {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
   stroke: #fff;
-  opacity: 0.75;
   animation: dash 1s cubic-bezier(0.66, 0, 0.21, 1.14) forwards 0.5s;
   transition: all 0.3s ease-in-out;
 }
@@ -179,9 +192,37 @@ p {
   height: 100%;
   object-fit: cover;
   object-position: 0 0;
-  /* opacity: 0.25; */
+  opacity: 0.25;
   pointer-events: none;
 }
+
+.related > h4 {
+  margin-bottom: 0;
+}
+
+.rec-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.flex > div {
+  padding-right: 2rem;
+  width: 33%;
+}
+
+.flex img {
+  max-width: 125px;
+}
+
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
