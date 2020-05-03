@@ -28,11 +28,18 @@ nav {
 .links {
   display: flex;
 }
-.links a {
+.links a,
+footer a {
   padding-left: 1rem;
   color: white;
   text-decoration: none;
   opacity: 0.75;
+}
+
+footer {
+  opacity: 0.75;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .trailer {
@@ -56,6 +63,7 @@ h1 {
   width: 95%;
   max-width: 1500px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .grid {
