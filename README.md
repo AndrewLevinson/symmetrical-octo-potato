@@ -47,6 +47,6 @@ I'll add examples from homework and in-class ex. to help you with your own work.
 
 #### Week 14: May 1
 
-<i>coming soon</i>
+- [In-class example](lab/week-14/in-class-example/)
 
 ---
